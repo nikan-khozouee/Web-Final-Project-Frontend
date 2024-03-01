@@ -1,12 +1,24 @@
 import { Link } from "react-router-dom";
 import { post } from "../../utils/httpClient";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  // const [role, setRole] = useState("user");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const userAuth = JSON.parse(localStorage.getItem("userAuth"));
+    if (userAuth && userAuth.user_id) {
+      if (userAuth.role == "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
+    }
+  });
 
   const handleSend = async () => {
     const response = await post("/login", { username, password });
@@ -14,7 +26,11 @@ function LoginForm() {
       console.log("wrong username and/or password.");
     } else {
       localStorage.setItem("userAuth", JSON.stringify(response.user));
-      navigate("/");
+      if (response.user.role == "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
     }
   };
 
