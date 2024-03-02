@@ -54,8 +54,7 @@ function LoginForm() {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <Link to="/">Back</Link>
-      <h2>Login</h2>
+      <h2>Weclomce to GameDB</h2>
       <input
         type="text"
         placeholder="Username"
