@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { get, post } from "../../utils/httpClient";
 import { useNavigate } from "react-router-dom";
-
+import TopBar from "../../elements/TopBar/TopBar.jsx";
 export default function Home() {
   const [games, setGames] = useState([]);
   const navigate = useNavigate();
@@ -38,6 +38,7 @@ export default function Home() {
 
   return (
     <div className="home-wrapper">
+      <TopBar />
       {/* <div className="buttons-wrapper">
         <Link to="/tweets">
           <div className="main-button">Send Tweet</div>
