@@ -29,6 +29,9 @@ const TopBar = () => {
   return (
     <div style={topBarStyle}>
       <h1>My Application</h1>
+      <Link style={logoutLinkStyle} to="/search">
+        Search
+      </Link>
       <Link style={logoutLinkStyle} onClick={logout} to="/login">
         Logout
       </Link>

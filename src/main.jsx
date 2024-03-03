@@ -5,6 +5,7 @@ import "./index.css";
 import Home from "./pages/Home/Home.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Admin from "./pages/Admin/Admin.jsx";
+import Search from "./pages/Search/Search.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <Admin />,
+  },
+  {
+    path: "/search",
+    element: <Search />,
   },
 ]);
 
