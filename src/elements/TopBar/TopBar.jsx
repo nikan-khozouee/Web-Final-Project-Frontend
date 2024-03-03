@@ -28,12 +28,15 @@ const logoutLinkStyle = {
 const TopBar = () => {
   return (
     <div style={topBarStyle}>
-      <h1>My Application</h1>
-      <Link style={logoutLinkStyle} to="/search">
-        Search
+      <h1>Games DB</h1>
+      <Link style={logoutLinkStyle} to="/">
+        Home
       </Link>
       <Link style={logoutLinkStyle} onClick={logout} to="/login">
         Logout
+      </Link>{" "}
+      <Link style={logoutLinkStyle} to="/search">
+        Search
       </Link>
     </div>
   );
